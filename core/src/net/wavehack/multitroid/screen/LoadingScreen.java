@@ -14,18 +14,18 @@ public class LoadingScreen implements Screen {
         G.screen = this;
 
         WorldConfiguration config = new WorldConfigurationBuilder()
-                .with(
+            .with(
 
-                        // Passive - System
-                        new CameraSystem(),
+                // Passive - System
+                new CameraSystem(),
 
-                        // Active - Asset Loader
+                // Active - Asset Loader
 
-                        // Render
-                        new ClearScreenSystem()
+                // Render
+                new ClearScreenSystem()
 
-                )
-                .build();
+            )
+            .build();
 
         G.world = new World(config);
     }

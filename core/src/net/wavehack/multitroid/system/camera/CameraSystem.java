@@ -13,24 +13,24 @@ public class CameraSystem extends BaseSystem {
 
     public CameraSystem() {
         this.camera = new OrthographicCamera(
-                Gdx.graphics.getWidth() / ZOOM,
-                Gdx.graphics.getHeight() / ZOOM
+            Gdx.graphics.getWidth() / ZOOM,
+            Gdx.graphics.getHeight() / ZOOM
         );
         this.camera.setToOrtho(
-                false,
-                Gdx.graphics.getWidth() / ZOOM,
-                Gdx.graphics.getHeight() / ZOOM
+            false,
+            Gdx.graphics.getWidth() / ZOOM,
+            Gdx.graphics.getHeight() / ZOOM
         );
         this.camera.update();
 
         this.guiCamera = new OrthographicCamera(
-                Gdx.graphics.getWidth() / ZOOM,
-                Gdx.graphics.getHeight() / ZOOM
+            Gdx.graphics.getWidth() / ZOOM,
+            Gdx.graphics.getHeight() / ZOOM
         );
         this.guiCamera.setToOrtho(
-                false,
-                Gdx.graphics.getWidth() / ZOOM,
-                Gdx.graphics.getHeight() / ZOOM
+            false,
+            Gdx.graphics.getWidth() / ZOOM,
+            Gdx.graphics.getHeight() / ZOOM
         );
         this.guiCamera.update();
     }
