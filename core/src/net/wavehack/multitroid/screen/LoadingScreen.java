@@ -5,6 +5,8 @@ import com.artemis.WorldConfiguration;
 import com.artemis.WorldConfigurationBuilder;
 import com.badlogic.gdx.Screen;
 import net.wavehack.multitroid.G;
+import net.wavehack.multitroid.system.camera.CameraSystem;
+import net.wavehack.multitroid.system.render.ClearScreenSystem;
 
 public class LoadingScreen implements Screen {
 
@@ -12,8 +14,17 @@ public class LoadingScreen implements Screen {
         G.screen = this;
 
         WorldConfiguration config = new WorldConfigurationBuilder()
-//                .with(
-//                )
+                .with(
+
+                        // Passive - System
+                        new CameraSystem(),
+
+                        // Active - Asset Loader
+
+                        // Render
+                        new ClearScreenSystem()
+
+                )
                 .build();
 
         G.world = new World(config);
