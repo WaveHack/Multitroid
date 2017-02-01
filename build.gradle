@@ -23,6 +23,7 @@ allprojects {
         box2DLightsVersion = '1.4'
         ashleyVersion = '1.7.0'
         aiVersion = '1.8.0'
+        artemisOdbVersion = '2.1.0'
     }
 
     repositories {
@@ -94,6 +95,7 @@ project(":core") {
         compile "com.badlogicgames.gdx:gdx:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-controllers:$gdxVersion"
+        compile "net.onedaybeard.artemis:artemis-odb:$artemisOdbVersion"
     }
 }
 
