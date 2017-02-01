@@ -7,6 +7,7 @@ public class MultitroidGame extends Game {
 
     @Override
     public void create() {
+        G.game = this;
         this.setScreen(new LoadingScreen());
     }
 

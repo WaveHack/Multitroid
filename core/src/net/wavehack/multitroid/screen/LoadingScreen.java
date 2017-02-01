@@ -1,8 +1,23 @@
 package net.wavehack.multitroid.screen;
 
+import com.artemis.World;
+import com.artemis.WorldConfiguration;
+import com.artemis.WorldConfigurationBuilder;
 import com.badlogic.gdx.Screen;
+import net.wavehack.multitroid.G;
 
 public class LoadingScreen implements Screen {
+
+    public LoadingScreen() {
+        G.screen = this;
+
+        WorldConfiguration config = new WorldConfigurationBuilder()
+//                .with(
+//                )
+                .build();
+
+        G.world = new World(config);
+    }
 
     @Override
     public void show() {
@@ -10,6 +25,8 @@ public class LoadingScreen implements Screen {
 
     @Override
     public void render(float delta) {
+        G.world.setDelta(delta);
+        G.world.process();
     }
 
     @Override
@@ -26,6 +43,7 @@ public class LoadingScreen implements Screen {
 
     @Override
     public void hide() {
+        G.world.dispose();
     }
 
     @Override
