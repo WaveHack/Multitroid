@@ -1,11 +1,15 @@
 package net.wavehack.multitroid.screen;
 
+import com.artemis.Entity;
 import com.artemis.World;
 import com.artemis.WorldConfiguration;
 import com.artemis.WorldConfigurationBuilder;
 import com.badlogic.gdx.Screen;
 import net.wavehack.multitroid.G;
+import net.wavehack.multitroid.component.basic.Bounds;
+import net.wavehack.multitroid.component.basic.Position;
 import net.wavehack.multitroid.system.camera.CameraSystem;
+import net.wavehack.multitroid.system.debug.DebugRenderSystem;
 import net.wavehack.multitroid.system.render.ClearScreenSystem;
 
 public class LoadingScreen implements Screen {
@@ -22,12 +26,18 @@ public class LoadingScreen implements Screen {
                 // Active - Asset Loader
 
                 // Render
-                new ClearScreenSystem()
+                new ClearScreenSystem(),
+                new DebugRenderSystem()
 
             )
             .build();
 
         G.world = new World(config);
+
+        Entity e = G.world.createEntity();
+        e.edit()
+            .add(new Position(50, 50))
+            .add(new Bounds(10, 10));
     }
 
     @Override
