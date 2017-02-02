@@ -2,7 +2,6 @@ package net.wavehack.multitroid.screen;
 
 import com.artemis.Entity;
 import com.artemis.World;
-import com.artemis.WorldConfiguration;
 import com.artemis.WorldConfigurationBuilder;
 import com.badlogic.gdx.Screen;
 import net.wavehack.multitroid.G;
@@ -17,14 +16,14 @@ public class LoadingScreen implements Screen {
 
     public LoadingScreen() {
         G.screen = this;
-
-        WorldConfiguration config = new WorldConfigurationBuilder()
+        G.world = new World(new WorldConfigurationBuilder()
             .with(
 
                 // Passive - System
                 new CameraSystem(4f),
 
                 // Active - Input
+//                new PlayerInputSystem(),
 
                 // Active - Psysics
                 new MovementSystem(),
@@ -34,13 +33,12 @@ public class LoadingScreen implements Screen {
                 new DebugRenderSystem()
 
             )
-            .build();
-
-        G.world = new World(config);
+            .build()
+        );
 
         Entity e = G.world.createEntity();
         e.edit()
-            .add(new Position(32, 32))
+            .add(new Position(24, 24))
             .add(new Bounds(16, 16))
             /*.add(new Movement(16, 0))*/;
     }

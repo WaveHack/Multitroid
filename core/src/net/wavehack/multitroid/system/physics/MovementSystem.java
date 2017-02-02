@@ -22,7 +22,10 @@ public class MovementSystem extends EntityProcessingSystem {
         final Movement movement = this.mm.get(e);
         final Position position = this.pm.get(e);
 
-        position.position.add(movement.velocity.cpy().scl(this.world.delta));
+        // todo: map collisions
+
+        position.position.x += (movement.velocity.x * this.world.delta);
+        position.position.y += (movement.velocity.y * this.world.delta);
     }
 
 }
