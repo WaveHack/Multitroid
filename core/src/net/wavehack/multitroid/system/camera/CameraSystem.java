@@ -1,10 +1,10 @@
 package net.wavehack.multitroid.system.camera;
 
-import com.artemis.BaseSystem;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import net.wavehack.multitroid.system.PassiveSystem;
 
-public class CameraSystem extends BaseSystem {
+public class CameraSystem extends PassiveSystem {
 
     public OrthographicCamera camera;
     public OrthographicCamera guiCamera;
@@ -26,10 +26,6 @@ public class CameraSystem extends BaseSystem {
         this.guiCamera = new OrthographicCamera(width, height);
         this.guiCamera.setToOrtho(false, width, height);
         this.guiCamera.update();
-    }
-
-    @Override
-    protected void processSystem() {
     }
 
 }
