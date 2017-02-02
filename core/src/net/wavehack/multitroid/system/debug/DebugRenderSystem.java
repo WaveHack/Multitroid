@@ -32,6 +32,7 @@ public class DebugRenderSystem extends EntityProcessingSystem {
         this.shapeRenderer.identity();
 
         Gdx.gl.glEnable(GL20.GL_BLEND);
+        Gdx.gl.glBlendFunc(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
     }
 
     @Override
