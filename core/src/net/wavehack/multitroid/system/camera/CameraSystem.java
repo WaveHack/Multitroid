@@ -6,38 +6,30 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 
 public class CameraSystem extends BaseSystem {
 
-    public final OrthographicCamera camera;
-    public final OrthographicCamera guiCamera;
+    public OrthographicCamera camera;
+    public OrthographicCamera guiCamera;
+    public final float zoom;
 
-    public static final float ZOOM = 4f;
+    public CameraSystem(float zoom) {
+        this.zoom = zoom;
+        this.setupViewport(
+            Gdx.graphics.getWidth() / this.zoom,
+            Gdx.graphics.getHeight() / this.zoom
+        );
+    }
 
-    public CameraSystem() {
-        this.camera = new OrthographicCamera(
-            Gdx.graphics.getWidth() / ZOOM,
-            Gdx.graphics.getHeight() / ZOOM
-        );
-        this.camera.setToOrtho(
-            false,
-            Gdx.graphics.getWidth() / ZOOM,
-            Gdx.graphics.getHeight() / ZOOM
-        );
+    protected void setupViewport(float width, float height) {
+        this.camera = new OrthographicCamera(width, height);
+        this.camera.setToOrtho(false, width, height);
         this.camera.update();
 
-        this.guiCamera = new OrthographicCamera(
-            Gdx.graphics.getWidth() / ZOOM,
-            Gdx.graphics.getHeight() / ZOOM
-        );
-        this.guiCamera.setToOrtho(
-            false,
-            Gdx.graphics.getWidth() / ZOOM,
-            Gdx.graphics.getHeight() / ZOOM
-        );
+        this.guiCamera = new OrthographicCamera(width, height);
+        this.guiCamera.setToOrtho(false, width, height);
         this.guiCamera.update();
     }
 
     @Override
     protected void processSystem() {
-        this.camera.update();
     }
 
 }
