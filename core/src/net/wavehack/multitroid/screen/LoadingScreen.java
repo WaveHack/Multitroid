@@ -17,7 +17,7 @@ public class LoadingScreen implements Screen {
             .with(
 
                 // Passive - System
-                new CameraSystem(),
+                new CameraSystem(4f),
 
                 // Active - Asset Loader
 
