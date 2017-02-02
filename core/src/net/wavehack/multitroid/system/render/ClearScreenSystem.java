@@ -7,10 +7,7 @@ import com.badlogic.gdx.graphics.GL20;
 
 public class ClearScreenSystem extends BaseSystem {
 
-    private Color color = Color.BLACK;
-
-    public ClearScreenSystem() {
-    }
+    private final Color color = Color.BLACK;
 
     @Override
     protected void processSystem() {
