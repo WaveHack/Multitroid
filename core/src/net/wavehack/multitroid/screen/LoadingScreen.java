@@ -26,7 +26,7 @@ public class LoadingScreen implements Screen {
 
                 // Active - Input
 
-                // Active - Logic
+                // Active - Psysics
                 new MovementSystem(),
 
                 // Active - Render
