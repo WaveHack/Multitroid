@@ -7,6 +7,8 @@ import com.badlogic.gdx.Screen;
 import net.wavehack.multitroid.G;
 import net.wavehack.multitroid.component.basic.Bounds;
 import net.wavehack.multitroid.component.basic.Position;
+import net.wavehack.multitroid.system.asset.AssetLoaderSystem;
+import net.wavehack.multitroid.system.asset.AssetSystem;
 import net.wavehack.multitroid.system.camera.CameraSystem;
 import net.wavehack.multitroid.system.debug.DebugRenderSystem;
 import net.wavehack.multitroid.system.physics.MovementSystem;
@@ -20,7 +22,12 @@ public class LoadingScreen implements Screen {
             .with(
 
                 // Passive - System
+                new AssetSystem(),
                 new CameraSystem(4f),
+
+                // Initialize
+                new AssetLoaderSystem(),
+//                new DirectorSystem(),
 
                 // Active - Input
 //                new PlayerInputSystem(),
@@ -30,6 +37,9 @@ public class LoadingScreen implements Screen {
 
                 // Active - Render
                 new ClearScreenSystem(),
+//                new MapRenderSystem(),
+//                new SpriteRenderSystem(),
+//                new GUIRenderSystem(),
                 new DebugRenderSystem()
 
             )
