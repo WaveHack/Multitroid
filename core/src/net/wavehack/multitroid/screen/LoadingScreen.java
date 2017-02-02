@@ -10,6 +10,7 @@ import net.wavehack.multitroid.component.basic.Bounds;
 import net.wavehack.multitroid.component.basic.Position;
 import net.wavehack.multitroid.system.camera.CameraSystem;
 import net.wavehack.multitroid.system.debug.DebugRenderSystem;
+import net.wavehack.multitroid.system.physics.MovementSystem;
 import net.wavehack.multitroid.system.render.ClearScreenSystem;
 
 public class LoadingScreen implements Screen {
@@ -23,9 +24,12 @@ public class LoadingScreen implements Screen {
                 // Passive - System
                 new CameraSystem(4f),
 
-                // Active - Asset Loader
+                // Active - Input
 
-                // Render
+                // Active - Logic
+                new MovementSystem(),
+
+                // Active - Render
                 new ClearScreenSystem(),
                 new DebugRenderSystem()
 
@@ -36,8 +40,9 @@ public class LoadingScreen implements Screen {
 
         Entity e = G.world.createEntity();
         e.edit()
-            .add(new Position(50, 50))
-            .add(new Bounds(10, 10));
+            .add(new Position(32, 32))
+            .add(new Bounds(16, 16))
+            /*.add(new Movement(16, 0))*/;
     }
 
     @Override
