@@ -1,0 +1,26 @@
+sprites.png
+size: 113, 45
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+elisa/stand
+  rotate: false
+  xy: 1, 1
+  size: 36, 43
+  orig: 54, 54
+  offset: 5, 3
+  index: 1
+elisa/stand
+  rotate: false
+  xy: 39, 1
+  size: 36, 42
+  orig: 54, 54
+  offset: 6, 3
+  index: 2
+elisa/stand
+  rotate: false
+  xy: 77, 1
+  size: 35, 41
+  orig: 54, 54
+  offset: 8, 3
+  index: 3
