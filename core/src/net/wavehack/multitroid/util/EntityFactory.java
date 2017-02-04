@@ -6,7 +6,7 @@ import net.wavehack.multitroid.G;
 import net.wavehack.multitroid.component.basic.Bounds;
 import net.wavehack.multitroid.component.basic.Controller;
 import net.wavehack.multitroid.component.basic.Position;
-import net.wavehack.multitroid.component.graphics.Sprite;
+import net.wavehack.multitroid.component.graphics.Animation;
 import net.wavehack.multitroid.component.physics.Physics;
 
 public class EntityFactory {
@@ -17,43 +17,12 @@ public class EntityFactory {
             .add(new Position(x, y))
             .add(new Bounds(13, 34))
             .add(new Physics())
-
-            /*.add(new Animated()
-
-                .add(new Animation("stand", "sprites", "elisa/stand", 1, 1000))
-                .add(new Animation("stand", "sprites", "elisa/stand", 2, 1000))
-                .add(new Animation("stand", "sprites", "elisa/stand", 3, 1000, () -> {
-                    // pant
-                }))
-                .add(new Animation("stand", "sprites", "elisa/stand", 2, 1000))
-
-                .add(new Animation("stand", Animation.createLinearAnimation(
-                    "sprites",
-                    "elisa/stand",
-                    new Integer[]{1, 2, 3, 2},
-                    1000,
-                    Animation.Type.Loop
-                )))
-
-                .add(new Animation("stand", Animation.createLinearAnimation(
-                    "sprites",
-                    "elisa/stand",
-                    3,
-                    1000,
-                    Animation.Type.PingPong
-                )))
-
-                .add(new Animation("run", Animation.createLinearAnimation(
-                    "sprites",
-                    "elisa/run",
-                    8,
-                    1000,
-                    Animation.Type.Loop
-                )))
-            )*/
-
-            .add(new Sprite("sprites.txt", "elisa/stand", -1.5f, -6))
             .add(new Controller())
+            .add(
+                new Animation("sprites.txt")
+                    .add("elisa/stand", Animation.FrameSequence.createLinearSequence(3, 1000, Animation.Type.PingPong))
+                    .add("elisa/run", Animation.FrameSequence.createLinearSequence(8, 1000, Animation.Type.Loop))
+            )
         ;
         G.world.getSystem(TagManager.class).register("PLAYER", player);
         return player;
