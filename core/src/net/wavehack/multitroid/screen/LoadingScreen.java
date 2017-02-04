@@ -3,7 +3,7 @@ package net.wavehack.multitroid.screen;
 import com.artemis.Entity;
 import com.artemis.World;
 import com.artemis.WorldConfigurationBuilder;
-import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import net.wavehack.multitroid.G;
 import net.wavehack.multitroid.component.basic.Bounds;
@@ -17,7 +17,7 @@ import net.wavehack.multitroid.system.physics.MovementSystem;
 import net.wavehack.multitroid.system.render.ClearScreenSystem;
 import net.wavehack.multitroid.system.render.SpriteRenderSystem;
 
-public class LoadingScreen implements Screen {
+public class LoadingScreen extends ScreenAdapter {
 
     public LoadingScreen() {
         G.screen = this;
@@ -59,34 +59,9 @@ public class LoadingScreen implements Screen {
     }
 
     @Override
-    public void show() {
-    }
-
-    @Override
     public void render(float delta) {
         G.world.setDelta(delta);
         G.world.process();
-    }
-
-    @Override
-    public void resize(int width, int height) {
-    }
-
-    @Override
-    public void pause() {
-    }
-
-    @Override
-    public void resume() {
-    }
-
-    @Override
-    public void hide() {
-        G.world.dispose();
-    }
-
-    @Override
-    public void dispose() {
     }
 
 }
