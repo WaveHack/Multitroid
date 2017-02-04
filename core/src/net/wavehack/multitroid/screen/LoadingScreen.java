@@ -11,7 +11,9 @@ import net.wavehack.multitroid.system.asset.AssetLoaderSystem;
 import net.wavehack.multitroid.system.asset.AssetSystem;
 import net.wavehack.multitroid.system.camera.CameraSystem;
 import net.wavehack.multitroid.system.debug.DebugRenderSystem;
+import net.wavehack.multitroid.system.input.LocalControllerSystem;
 import net.wavehack.multitroid.system.physics.MovementSystem;
+import net.wavehack.multitroid.system.physics.PhysicsSystem;
 import net.wavehack.multitroid.system.render.ClearScreenSystem;
 import net.wavehack.multitroid.system.render.SpriteRenderSystem;
 import net.wavehack.multitroid.util.EntityFactory;
@@ -34,10 +36,11 @@ public class LoadingScreen extends ScreenAdapter {
 //                new DirectorSystem(),
 
                 // Active - Input
-//                new PlayerInputSystem(),
+                new LocalControllerSystem(),
 
                 // Active - Psysics
                 new MovementSystem(),
+                new PhysicsSystem(),
 
                 // Active - Render
                 new ClearScreenSystem(),

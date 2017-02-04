@@ -4,28 +4,31 @@ import com.artemis.Aspect;
 import com.artemis.ComponentMapper;
 import com.artemis.Entity;
 import com.artemis.systems.EntityProcessingSystem;
-import net.wavehack.multitroid.component.basic.Position;
-import net.wavehack.multitroid.component.physics.Movement;
+import net.wavehack.multitroid.component.basic.Controller;
+import net.wavehack.multitroid.component.physics.Physics;
 
 public class MovementSystem extends EntityProcessingSystem {
 
-    private ComponentMapper<Movement> mm;
-    private ComponentMapper<Position> pm;
+    private ComponentMapper<Controller> controllerMapper;
+    private ComponentMapper<Physics> physicsMapper;
 
     @SuppressWarnings("unchecked")
     public MovementSystem() {
-        super(Aspect.all(Movement.class, Position.class));
+        super(Aspect.all(Controller.class, Physics.class));
     }
 
     @Override
     protected void process(Entity e) {
-        final Movement movement = this.mm.get(e);
-        final Position position = this.pm.get(e);
+        final Controller controller = this.controllerMapper.get(e);
+        final Physics physics = this.physicsMapper.get(e);
 
-        // todo: map collisions
-
-        position.position.x += (movement.velocity.x * this.world.delta);
-        position.position.y += (movement.velocity.y * this.world.delta);
+        if (controller.moveLeft) {
+            physics.velocity.x = -64;
+        } else if (controller.moveRight) {
+            physics.velocity.x = 64;
+        } else {
+            physics.velocity.x = 0;
+        }
     }
 
 }
