@@ -44,8 +44,8 @@ public class EntityFactory {
                     "sprites",
                     "elisa/run",
                     8,
-                    Animation.Type.Loop,
-                    true
+                    1000,
+                    Animation.Type.Loop
                 )))
             )*/
 
