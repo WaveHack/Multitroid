@@ -4,7 +4,9 @@ import com.artemis.Aspect;
 import com.artemis.ComponentMapper;
 import com.artemis.Entity;
 import com.artemis.systems.EntityProcessingSystem;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import net.wavehack.multitroid.component.basic.Position;
 import net.wavehack.multitroid.component.graphics.Sprite;
 import net.wavehack.multitroid.system.asset.AssetSystem;
@@ -37,7 +39,8 @@ public class SpriteRenderSystem extends EntityProcessingSystem {
         final Position position = this.pm.get(e);
         final Sprite sprite = this.sm.get(e);
 
-        com.badlogic.gdx.graphics.g2d.Sprite gdxSprite = this.assetSystem.sprite(sprite.name);
+        TextureAtlas atlas = this.assetSystem.getTextureAtlas("sprites.txt");
+        com.badlogic.gdx.graphics.g2d.Sprite gdxSprite = atlas.createSprite("elisa/stand", 1);
 
         gdxSprite.setPosition(
             position.position.x - gdxSprite.getWidth() / 2 - sprite.offset.x,
