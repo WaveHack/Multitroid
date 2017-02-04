@@ -197,6 +197,14 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
+            <key type="filename">sprites/elisa/run_0001.png</key>
+            <key type="filename">sprites/elisa/run_0002.png</key>
+            <key type="filename">sprites/elisa/run_0003.png</key>
+            <key type="filename">sprites/elisa/run_0004.png</key>
+            <key type="filename">sprites/elisa/run_0005.png</key>
+            <key type="filename">sprites/elisa/run_0006.png</key>
+            <key type="filename">sprites/elisa/run_0007.png</key>
+            <key type="filename">sprites/elisa/run_0008.png</key>
             <key type="filename">sprites/elisa/stand_0001.png</key>
             <key type="filename">sprites/elisa/stand_0002.png</key>
             <key type="filename">sprites/elisa/stand_0003.png</key>

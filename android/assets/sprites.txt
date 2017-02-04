@@ -1,25 +1,81 @@
 sprites.png
-size: 113, 45
+size: 350, 46
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-elisa/stand
+elisa/run
+  rotate: false
+  xy: 188, 1
+  size: 25, 42
+  orig: 54, 54
+  offset: 19, 3
+  index: 1
+elisa/run
+  rotate: false
+  xy: 315, 1
+  size: 34, 41
+  orig: 54, 54
+  offset: 11, 3
+  index: 2
+elisa/run
+  rotate: false
+  xy: 158, 1
+  size: 28, 42
+  orig: 54, 54
+  offset: 14, 3
+  index: 3
+elisa/run
   rotate: false
   xy: 1, 1
+  size: 22, 44
+  orig: 54, 54
+  offset: 17, 2
+  index: 4
+elisa/run
+  rotate: false
+  xy: 215, 1
+  size: 24, 42
+  orig: 54, 54
+  offset: 18, 3
+  index: 5
+elisa/run
+  rotate: false
+  xy: 241, 1
+  size: 35, 41
+  orig: 54, 54
+  offset: 11, 3
+  index: 6
+elisa/run
+  rotate: false
+  xy: 127, 1
+  size: 29, 42
+  orig: 54, 54
+  offset: 13, 3
+  index: 7
+elisa/run
+  rotate: false
+  xy: 63, 1
+  size: 24, 43
+  orig: 54, 54
+  offset: 18, 3
+  index: 8
+elisa/stand
+  rotate: false
+  xy: 25, 1
   size: 36, 43
   orig: 54, 54
   offset: 5, 3
   index: 1
 elisa/stand
   rotate: false
-  xy: 39, 1
+  xy: 89, 1
   size: 36, 42
   orig: 54, 54
   offset: 6, 3
   index: 2
 elisa/stand
   rotate: false
-  xy: 77, 1
+  xy: 278, 1
   size: 35, 41
   orig: 54, 54
   offset: 8, 3
