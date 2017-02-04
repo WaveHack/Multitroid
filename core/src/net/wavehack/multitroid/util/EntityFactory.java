@@ -13,7 +13,7 @@ public class EntityFactory {
         player.edit()
             .add(new Position(x, y))
             .add(new Bounds(13, 34))
-            .add(new Sprite("elisa", -1, -6))
+            .add(new Sprite("elisa", -1.5f, -6))
         ;
         return player;
     }

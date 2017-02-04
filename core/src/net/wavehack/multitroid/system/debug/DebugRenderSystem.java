@@ -20,10 +20,9 @@ public class DebugRenderSystem extends EntityProcessingSystem {
     private ShapeRenderer shapeRenderer;
 
     @SuppressWarnings("unchecked")
-    public DebugRenderSystem() {
+    public DebugRenderSystem(ShapeRenderer shapeRenderer) {
         super(Aspect.all(Bounds.class, Position.class));
-
-        this.shapeRenderer = new ShapeRenderer();
+        this.shapeRenderer = shapeRenderer;
     }
 
     @Override
