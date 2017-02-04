@@ -42,6 +42,7 @@ public class LoadingScreen extends ScreenAdapter {
                 // Active - Render
                 new ClearScreenSystem(),
 //                new MapRenderSystem(),
+//                new AnimationRenderSystem(new SpriteBatch()),
                 new SpriteRenderSystem(new SpriteBatch()),
 //                new GUIRenderSystem(),
                 new DebugRenderSystem(new ShapeRenderer())
