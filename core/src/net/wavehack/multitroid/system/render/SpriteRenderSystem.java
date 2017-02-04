@@ -16,8 +16,8 @@ public class SpriteRenderSystem extends EntityProcessingSystem {
     private AssetSystem assetSystem;
     private CameraSystem cameraSystem;
 
-    private ComponentMapper<Position> pm;
-    private ComponentMapper<Sprite> sm;
+    private ComponentMapper<Position> positionMapper;
+    private ComponentMapper<Sprite> spriteMapper;
 
     private SpriteBatch spriteBatch;
 
@@ -35,8 +35,8 @@ public class SpriteRenderSystem extends EntityProcessingSystem {
 
     @Override
     protected void process(Entity e) {
-        final Position position = this.pm.get(e);
-        final Sprite sprite = this.sm.get(e);
+        final Position position = this.positionMapper.get(e);
+        final Sprite sprite = this.spriteMapper.get(e);
 
         TextureAtlas atlas = this.assetSystem.getTextureAtlas("sprites.txt");
         com.badlogic.gdx.graphics.g2d.Sprite gdxSprite = atlas.createSprite("elisa/stand", 1);
