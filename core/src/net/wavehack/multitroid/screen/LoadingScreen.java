@@ -14,6 +14,7 @@ import net.wavehack.multitroid.system.debug.DebugRenderSystem;
 import net.wavehack.multitroid.system.input.LocalControllerSystem;
 import net.wavehack.multitroid.system.physics.MovementSystem;
 import net.wavehack.multitroid.system.physics.PhysicsSystem;
+import net.wavehack.multitroid.system.render.AnimationRenderSystem;
 import net.wavehack.multitroid.system.render.ClearScreenSystem;
 import net.wavehack.multitroid.system.render.SpriteRenderSystem;
 import net.wavehack.multitroid.util.EntityFactory;
@@ -21,6 +22,9 @@ import net.wavehack.multitroid.util.EntityFactory;
 public class LoadingScreen extends ScreenAdapter {
 
     public LoadingScreen() {
+        SpriteBatch spriteBatch = new SpriteBatch();
+        ShapeRenderer shapeRenderer = new ShapeRenderer();
+
         G.screen = this;
         G.world = new World(new WorldConfigurationBuilder()
             .with(
@@ -45,10 +49,11 @@ public class LoadingScreen extends ScreenAdapter {
                 // Active - Render
                 new ClearScreenSystem(),
 //                new MapRenderSystem(),
-//                new AnimationRenderSystem(new SpriteBatch()),
-                new SpriteRenderSystem(new SpriteBatch()),
+                new AnimationRenderSystem(spriteBatch),
+                new SpriteRenderSystem(spriteBatch)
 //                new GUIRenderSystem(),
-                new DebugRenderSystem(new ShapeRenderer())
+
+//                new DebugRenderSystem(shapeRenderer)
 
             )
             .build()
