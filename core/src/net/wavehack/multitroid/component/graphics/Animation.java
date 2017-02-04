@@ -1,10 +1,6 @@
 package net.wavehack.multitroid.component.graphics;
 
 import com.artemis.Component;
-import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import net.wavehack.multitroid.G;
-import net.wavehack.multitroid.system.PassiveSystem;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,6 +8,7 @@ import java.util.HashMap;
 public class Animation extends Component {
 
     public enum Type {
+        OneOff,
         Loop,
         PingPong
     }
@@ -38,7 +35,7 @@ public class Animation extends Component {
             return this;
         }
 
-        public void advanceFrame() {
+        public boolean advanceFrame() {
             if (this.reversed) {
                 this.currentFrame--;
             } else {
@@ -46,6 +43,13 @@ public class Animation extends Component {
             }
 
             switch (this.type) {
+                case OneOff:
+                    if (this.currentFrame > this.frames.size() - 1) {
+                        this.currentFrame = (this.frames.size() - 1);
+                        return true;
+                    }
+                    break;
+
                 case Loop:
                     if (this.currentFrame > this.frames.size() - 1) {
                         this.currentFrame = 0;
@@ -64,6 +68,8 @@ public class Animation extends Component {
                     }
                     break;
             }
+
+            return false;
         }
 
         public Frame getCurrentFrame() {
@@ -88,15 +94,12 @@ public class Animation extends Component {
 
     public String textureAtlas;
     public String currentAnimation = "";
+    public boolean done = false;
     public float age = 0;
     public float prev = 0;
     public float next = 0;
 
     protected HashMap<String, FrameSequence> frameSequences = new HashMap<String, FrameSequence>();
-
-    // age (+= delta) etc
-    // current animation aka frameSequence->sprite
-    // get current anim frame
 
     public Animation() {
     }
@@ -118,13 +121,17 @@ public class Animation extends Component {
     public void update(float delta) {
         this.age += delta;
 
-        // todo: if done then return
+        if (this.done) {
+            return;
+        }
 
         this.prev += delta;
         this.next -= delta;
 
         if (this.next <= 0) {
-            this.getCurrentFrameSequence().advanceFrame();
+            if (this.getCurrentFrameSequence().advanceFrame()) {
+                this.done = true;
+            }
 
             this.prev = 0;
             this.next = this.getCurrentFrame().delay / 1000f;
