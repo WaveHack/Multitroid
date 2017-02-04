@@ -2,6 +2,7 @@ package net.wavehack.multitroid.screen;
 
 import com.artemis.World;
 import com.artemis.WorldConfigurationBuilder;
+import com.artemis.managers.TagManager;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
@@ -22,9 +23,11 @@ public class LoadingScreen extends ScreenAdapter {
         G.world = new World(new WorldConfigurationBuilder()
             .with(
 
+                new TagManager(),
+
                 // Passive - System
                 new AssetSystem(),
-                new CameraSystem(6f),
+                new CameraSystem(4f),
 
                 // Initialize
                 new AssetLoaderSystem(),
@@ -47,7 +50,7 @@ public class LoadingScreen extends ScreenAdapter {
             .build()
         );
 
-        EntityFactory.createPlayer(20, 20);
+        EntityFactory.createPlayer(50, 50);
     }
 
     @Override

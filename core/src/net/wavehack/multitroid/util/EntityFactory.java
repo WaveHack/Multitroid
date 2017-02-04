@@ -1,6 +1,7 @@
 package net.wavehack.multitroid.util;
 
 import com.artemis.Entity;
+import com.artemis.managers.TagManager;
 import net.wavehack.multitroid.G;
 import net.wavehack.multitroid.component.basic.Bounds;
 import net.wavehack.multitroid.component.basic.Position;
@@ -15,6 +16,7 @@ public class EntityFactory {
             .add(new Bounds(13, 34))
             .add(new Sprite("elisa", -1.5f, -6))
         ;
+        G.world.getSystem(TagManager.class).register("PLAYER", player);
         return player;
     }
 
