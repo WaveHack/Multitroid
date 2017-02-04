@@ -52,7 +52,7 @@ public class EntityFactory {
                 )))
             )*/
 
-            .add(new Sprite("elisa", -1.5f, -6))
+            .add(new Sprite("sprites.txt", "elisa/stand", -1.5f, -6))
             .add(new Controller())
         ;
         G.world.getSystem(TagManager.class).register("PLAYER", player);

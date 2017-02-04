@@ -38,8 +38,11 @@ public class SpriteRenderSystem extends EntityProcessingSystem {
         final Position position = this.positionMapper.get(e);
         final Sprite sprite = this.spriteMapper.get(e);
 
-        TextureAtlas atlas = this.assetSystem.getTextureAtlas("sprites.txt");
-        com.badlogic.gdx.graphics.g2d.Sprite gdxSprite = atlas.createSprite("elisa/stand", 1);
+//        TextureAtlas atlas = this.assetSystem.getTextureAtlas("sprites.txt");
+//        com.badlogic.gdx.graphics.g2d.Sprite gdxSprite = atlas.createSprite("elisa/stand", 1);
+
+        TextureAtlas atlas = this.assetSystem.getTextureAtlas(sprite.textureAtlas);
+        com.badlogic.gdx.graphics.g2d.Sprite gdxSprite = atlas.createSprite(sprite.regionName, sprite.index);
 
         gdxSprite.setPosition(
             position.position.x - gdxSprite.getWidth() / 2 - sprite.offset.x,
