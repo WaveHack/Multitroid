@@ -43,18 +43,21 @@ public class AnimationRenderSystem extends EntityProcessingSystem {
         final Position position = this.positionMapper.get(e);
 
         Animation.FrameSequence.Frame frame = animation.getCurrentFrame();
-        TextureAtlas atlas = this.assetSystem.getTextureAtlas(animation.textureAtlas);
-        Sprite sprite = atlas.createSprite(animation.currentAnimation, frame.index);
 
-        sprite.setColor(animation.color);
-        sprite.setScale(animation.scale.x, animation.scale.y);
+        if (frame.sprite == null) {
+            TextureAtlas atlas = this.assetSystem.getTextureAtlas(animation.textureAtlas);
+            frame.sprite = atlas.createSprite(animation.currentAnimation, frame.index);
+        }
 
-        sprite.setPosition(
-            position.position.x - sprite.getWidth() / 2 - animation.offset.x,
-            position.position.y - sprite.getHeight() / 2 - animation.offset.y
+        frame.sprite.setColor(animation.color);
+        frame.sprite.setScale(animation.scale.x, animation.scale.y);
+
+        frame.sprite.setPosition(
+            position.position.x - frame.sprite.getWidth() / 2 - animation.offset.x,
+            position.position.y - frame.sprite.getHeight() / 2 - animation.offset.y
         );
 
-        sprite.draw(this.spriteBatch);
+        frame.sprite.draw(this.spriteBatch);
     }
 
     @Override

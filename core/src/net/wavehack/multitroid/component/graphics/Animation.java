@@ -2,6 +2,7 @@ package net.wavehack.multitroid.component.graphics;
 
 import com.artemis.Component;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.math.Vector2;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class Animation extends Component {
 
             public int index = -1;
             public int delay;
+            public com.badlogic.gdx.graphics.g2d.Sprite sprite;
 
         }
 
