@@ -1,6 +1,8 @@
 package net.wavehack.multitroid.component.graphics;
 
 import com.artemis.Component;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.math.Vector2;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -99,6 +101,9 @@ public class Animation extends Component {
     public float prev = 0;
     public float next = 0;
 
+    public Color color = new Color(Color.WHITE);
+    public Vector2 scale = new Vector2(1, 1);
+
     protected HashMap<String, FrameSequence> frameSequences = new HashMap<String, FrameSequence>();
 
     public Animation() {
@@ -139,6 +144,10 @@ public class Animation extends Component {
     }
 
     public Animation change(String name) {
+        if (this.currentAnimation.equals(name)) {
+            return this;
+        }
+
         if (!this.frameSequences.containsKey(name)) {
             throw new RuntimeException("Frame sequence " + name + " does not exist");
         }

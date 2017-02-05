@@ -46,6 +46,9 @@ public class AnimationRenderSystem extends EntityProcessingSystem {
         TextureAtlas atlas = this.assetSystem.getTextureAtlas(animation.textureAtlas);
         Sprite sprite = atlas.createSprite(animation.currentAnimation, frame.index);
 
+        sprite.setColor(animation.color);
+        sprite.setScale(animation.scale.x, animation.scale.y);
+
         sprite.setPosition(
             position.position.x - sprite.getWidth() / 2,// - sprite.offset.x,
             position.position.y - sprite.getHeight() / 2// - sprite.offset.y

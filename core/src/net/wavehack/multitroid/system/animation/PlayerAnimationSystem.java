@@ -31,7 +31,6 @@ public class PlayerAnimationSystem extends EntityProcessingSystem {
         }
 
         // Move -> Stand
-
         if (animation.currentAnimation.equals("elisa/run") && (physics.velocity.x == 0)) {
             animation.change("elisa/stand");
         }
