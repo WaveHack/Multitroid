@@ -50,8 +50,8 @@ public class AnimationRenderSystem extends EntityProcessingSystem {
         sprite.setScale(animation.scale.x, animation.scale.y);
 
         sprite.setPosition(
-            position.position.x - sprite.getWidth() / 2,// - sprite.offset.x,
-            position.position.y - sprite.getHeight() / 2// - sprite.offset.y
+            position.position.x - sprite.getWidth() / 2 - animation.offset.x,
+            position.position.y - sprite.getHeight() / 2 - animation.offset.y
         );
 
         sprite.draw(this.spriteBatch);

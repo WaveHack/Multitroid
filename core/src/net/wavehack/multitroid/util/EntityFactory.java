@@ -3,10 +3,7 @@ package net.wavehack.multitroid.util;
 import com.artemis.Entity;
 import com.artemis.managers.TagManager;
 import net.wavehack.multitroid.G;
-import net.wavehack.multitroid.component.basic.Bounds;
-import net.wavehack.multitroid.component.basic.Controller;
-import net.wavehack.multitroid.component.basic.Player;
-import net.wavehack.multitroid.component.basic.Position;
+import net.wavehack.multitroid.component.basic.*;
 import net.wavehack.multitroid.component.graphics.Animation;
 import net.wavehack.multitroid.component.physics.Physics;
 
@@ -18,10 +15,11 @@ public class EntityFactory {
             .add(new Player())
             .add(new Position(x, y))
             .add(new Bounds(13, 34))
+            .add(new Facing())
             .add(new Physics())
             .add(new Controller())
             .add(
-                new Animation("sprites.txt")
+                new Animation("sprites.txt", 0, -6f)
                     .add("elisa/stand", Animation.FrameSequence.createLinearSequence(3, 100, Animation.Type.PingPong))
                     .add("elisa/run", Animation.FrameSequence.createLinearSequence(8, 100, Animation.Type.Loop))
 //                    .change("elisa/stand")

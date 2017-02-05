@@ -101,6 +101,7 @@ public class Animation extends Component {
     public float prev = 0;
     public float next = 0;
 
+    public Vector2 offset = new Vector2(0, 0);
     public Color color = new Color(Color.WHITE);
     public Vector2 scale = new Vector2(1, 1);
 
@@ -111,6 +112,15 @@ public class Animation extends Component {
 
     public Animation(String textureAtlas) {
         this.textureAtlas = textureAtlas;
+    }
+
+    public Animation(String textureAtlas, Vector2 offset) {
+        this(textureAtlas);
+        this.offset = offset;
+    }
+
+    public Animation(String textureAtlas, float offsetX, float offsetY) {
+        this(textureAtlas, new Vector2(offsetX, offsetY));
     }
 
     public Animation add(String name, FrameSequence frameSequence) {

@@ -56,10 +56,10 @@ public class LoadingScreen extends ScreenAdapter {
                 new ClearScreenSystem(),
 //                new MapRenderSystem(),
                 new AnimationRenderSystem(spriteBatch),
-                new SpriteRenderSystem(spriteBatch)
+                new SpriteRenderSystem(spriteBatch),
 //                new GUIRenderSystem(),
 
-//                new DebugRenderSystem(shapeRenderer)
+                new DebugRenderSystem(shapeRenderer)
 
             )
             .build()
