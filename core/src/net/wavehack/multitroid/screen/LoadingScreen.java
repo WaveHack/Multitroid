@@ -7,6 +7,7 @@ import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import net.wavehack.multitroid.G;
+import net.wavehack.multitroid.system.animation.AnimationUpdateSystem;
 import net.wavehack.multitroid.system.animation.PlayerAnimationSystem;
 import net.wavehack.multitroid.system.asset.AssetLoaderSystem;
 import net.wavehack.multitroid.system.asset.AssetSystem;
@@ -48,6 +49,7 @@ public class LoadingScreen extends ScreenAdapter {
                 new PhysicsSystem(),
 
                 // Active - Update
+                new AnimationUpdateSystem(),
                 new PlayerAnimationSystem(),
 
                 // Active - Render

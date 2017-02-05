@@ -42,8 +42,6 @@ public class AnimationRenderSystem extends EntityProcessingSystem {
         final Animation animation = this.animationMapper.get(e);
         final Position position = this.positionMapper.get(e);
 
-        animation.update(this.world.delta);
-
         Animation.FrameSequence.Frame frame = animation.getCurrentFrame();
         TextureAtlas atlas = this.assetSystem.getTextureAtlas(animation.textureAtlas);
         Sprite sprite = atlas.createSprite(animation.currentAnimation, frame.index);
