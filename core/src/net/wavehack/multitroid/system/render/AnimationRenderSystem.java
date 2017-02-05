@@ -4,16 +4,12 @@ import com.artemis.Aspect;
 import com.artemis.ComponentMapper;
 import com.artemis.Entity;
 import com.artemis.systems.EntityProcessingSystem;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import net.wavehack.multitroid.component.basic.Position;
 import net.wavehack.multitroid.component.graphics.Animation;
 import net.wavehack.multitroid.system.asset.AssetSystem;
 import net.wavehack.multitroid.system.camera.CameraSystem;
-import sun.rmi.runtime.Log;
-
-import java.io.Console;
 
 public class AnimationRenderSystem extends EntityProcessingSystem {
 

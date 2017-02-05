@@ -15,14 +15,13 @@ public class EntityFactory {
             .add(new Player())
             .add(new Position(x, y))
             .add(new Bounds(13, 34))
-            .add(new Facing())
+            .add(new Facing(Facing.Direction.Right))
             .add(new Physics())
             .add(new Controller())
             .add(
                 new Animation("sprites.txt", 0, -6f)
                     .add("elisa/stand", Animation.FrameSequence.createLinearSequence(3, 100, Animation.Type.PingPong))
                     .add("elisa/run", Animation.FrameSequence.createLinearSequence(8, 100, Animation.Type.Loop))
-//                    .change("elisa/stand")
             )
         ;
         G.world.getSystem(TagManager.class).register("PLAYER", player);

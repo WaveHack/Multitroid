@@ -2,7 +2,6 @@ package net.wavehack.multitroid.component.graphics;
 
 import com.artemis.Component;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.math.Vector2;
 
 import java.util.ArrayList;
@@ -28,7 +27,7 @@ public class Animation extends Component {
 
         public Type type = Type.Loop;
         public ArrayList<Frame> frames = new ArrayList<Frame>();
-        public int currentFrame;
+        public int currentFrame = 0;
         public boolean reversed = false;
 
         public FrameSequence() {

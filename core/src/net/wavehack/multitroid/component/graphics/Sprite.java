@@ -9,8 +9,6 @@ public class Sprite extends Component {
     public String regionName;
     public int index = 1;
 
-//    public com.badlogic.gdx.graphics.g2d.Sprite gdxSprite;
-
     public Vector2 offset = new Vector2(0, 0);
 
     public Sprite() {
