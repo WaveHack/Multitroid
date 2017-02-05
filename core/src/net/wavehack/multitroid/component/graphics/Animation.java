@@ -46,7 +46,7 @@ public class Animation extends Component {
                 case OneOff:
                     if (this.currentFrame > this.frames.size() - 1) {
                         this.currentFrame = (this.frames.size() - 1);
-                        return true;
+                        return false;
                     }
                     break;
 
@@ -69,7 +69,7 @@ public class Animation extends Component {
                     break;
             }
 
-            return false;
+            return true;
         }
 
         public Frame getCurrentFrame() {
@@ -129,7 +129,7 @@ public class Animation extends Component {
         this.next -= delta;
 
         if (this.next <= 0) {
-            if (this.getCurrentFrameSequence().advanceFrame()) {
+            if (!this.getCurrentFrameSequence().advanceFrame()) {
                 this.done = true;
             }
 
