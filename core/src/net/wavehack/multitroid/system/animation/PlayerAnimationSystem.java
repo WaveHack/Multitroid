@@ -26,12 +26,12 @@ public class PlayerAnimationSystem extends EntityProcessingSystem {
         // todo: flip frame x
 
         // Stand -> Move
-        if (animation.currentAnimation.equals("elisa/stand") && (Math.abs(physics.velocity.x) > 0)) {
+        if (Math.abs(physics.velocity.x) > 0) {
             animation.change("elisa/run");
         }
 
         // Move -> Stand
-        if (animation.currentAnimation.equals("elisa/run") && (physics.velocity.x == 0)) {
+        else if (physics.velocity.x == 0) {
             animation.change("elisa/stand");
         }
     }
